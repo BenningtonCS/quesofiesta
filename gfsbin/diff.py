@@ -35,7 +35,9 @@ def main():
 	svL = []
 	PL = []
 	SL = []
-
+	ln = []
+	RealPull = []
+	
 	for line in piman:
 		piL.append(line)
 	del piL[0]
@@ -64,10 +66,20 @@ def main():
 
 	NewFi = open("/data/gfsbin/neededFiles.txt", "w")
 
+
 	for item in toPull:
+                ln.append(item.split("/"))
+        for item in ln:
+                while len(item) > 4:
+                        del item[4]
+        for item in ln:
+        	RealPull.append('/'.join(item))
+
+	for item in RealPull:
 		NewFi.write(item)
 		NewFi.write("\n")
-		NewFi.write("/data/gfsbin/manifest.txt\n")
+		
+	NewFi.write("/data/gfsbin/manifest.txt\n")
 	 	
 	piman.close()
 	servman.close()
