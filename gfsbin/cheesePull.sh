@@ -1,6 +1,8 @@
 #!/bin/sh
 
 
+
+
 if [ -f "/data/gfsbin/neededFiles.txt" ]
 then
 	file="/data/gfsbin/neededFiles.txt"
@@ -28,3 +30,6 @@ then
 else 
 	echo "No files needed for transfer"
 fi
+
+cp /data/temp/manifest.txt /data/gfsbin/manifest.txt
+
