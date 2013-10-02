@@ -10,7 +10,7 @@ then
 	do
 		
 		
-		scp -r pi@10.10.100.144:$line $line
+		scp -r pi@10.10.100.144:$line /data/gfsbin
 		if [ "$line" ]
 		then
 			if [ -f $line ]:
@@ -30,6 +30,4 @@ then
 else 
 	echo "No files needed for transfer"
 fi
-
-cp /data/temp/manifest.txt /data/gfsbin/manifest.txt
 
