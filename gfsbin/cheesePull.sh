@@ -13,7 +13,7 @@ then
 		scp -r pi@10.10.100.144:$line /data/gfsbin
 		if [ "$line" ]
 		then
-			if [ -f $line ]:
+			if [ -f $line ]
 			then
 				echo "===>Transfer of $line was successful.\n"
 				chmod +x $line
