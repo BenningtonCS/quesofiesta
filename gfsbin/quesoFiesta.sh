@@ -1,5 +1,5 @@
 #!/bin/sh
 
-./manifetch.sh
+./manifetch.py
 ./diff.py
 ./cheesePull.sh
