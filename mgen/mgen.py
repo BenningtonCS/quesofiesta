@@ -29,9 +29,10 @@ with open(GFS_PATH + "manifest.txt", "w") as a:
                                 hex = hashlib.md5(open(str(f)).read()).hexdigest()
                                 a.write(str(f) + "|" + hex + os.linesep)
 
-
+# Create a md5 checksum for the manifest itself
 with open(GFS_PATH + "manifest.txt", "r") as a:
         mhex = hashlib.md5(a.read()).hexdigest()
 
+# Append the manifest md5 checksum to the manifest
 with open(GFS_PATH + "manifest.txt", "a") as a:
         a.write(GFS_PATH + "manifest.txt" + "|" + mhex + os.linesep)
